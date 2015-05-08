@@ -38,7 +38,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.خروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.CustomersBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -71,7 +71,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
             this.toolStripSeparator3,
-            this.toolStripButton1,
+            this.CustomersBtn,
             this.toolStripSeparator8,
             this.toolStripButton6,
             this.toolStripSeparator9,
@@ -143,13 +143,14 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
+            // CustomersBtn
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(58, 22);
-            this.toolStripButton1.Text = "الزبائن";
+            this.CustomersBtn.Image = ((System.Drawing.Image)(resources.GetObject("CustomersBtn.Image")));
+            this.CustomersBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CustomersBtn.Name = "CustomersBtn";
+            this.CustomersBtn.Size = new System.Drawing.Size(58, 22);
+            this.CustomersBtn.Text = "الزبائن";
+            this.CustomersBtn.Click += new System.EventHandler(this.CustomersBtn_Click);
             // 
             // toolStripSeparator8
             // 
@@ -315,6 +316,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ThemeName = "TelerikMetroBlue";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -339,7 +341,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem خروجToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton CustomersBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;

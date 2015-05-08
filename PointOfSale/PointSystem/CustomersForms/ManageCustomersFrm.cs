@@ -29,13 +29,13 @@ namespace PointSystem.CustomersForms
 
             DgvCustomers.Rows.Clear();
 
-                 LstCustomers.ForEach(cst =>
-                        {
-                            DgvCustomers.Rows.Add(new string[]{  cst.ID.ToString(),
+            LstCustomers.ForEach(cst =>
+            {
+                DgvCustomers.Rows.Add(new string[]{  cst.ID.ToString(),
                                                                      cst.CustomerName,
                                                                           cst.Address, 
                                                                                cst.Phone,
-                                                                                  cst.AccountID.ToString()  });
+                                                                                  });
                         });
 
         }
@@ -65,7 +65,7 @@ namespace PointSystem.CustomersForms
 
             Db.CustomersRow rw = CustomersCmd.GetById(int.Parse(DgvCustomers.CurrentRow.Cells[0].Value.ToString()));
 
-            if (col.ToString() == "5")
+            if (col.ToString() == "4")
             {
 
                 EditCustomersFrm frm = new EditCustomersFrm();
@@ -74,7 +74,7 @@ namespace PointSystem.CustomersForms
                 frm.ShowDialog();
             }
 
-            if (col.ToString() == "6")
+            if (col.ToString() == "5")
             {
 
 

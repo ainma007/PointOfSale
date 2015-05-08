@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointSystem.CustomersForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -140,6 +141,12 @@ namespace PointSystem
             CreateAccountCategories();
 
             Helper.EditAssetsPrice_Yearly();
+        }
+
+        private void CustomersBtn_Click(object sender, EventArgs e)
+        {
+            ManageCustomersFrm frm = new ManageCustomersFrm();
+            frm.ShowDialog();
         }
     }
 }
