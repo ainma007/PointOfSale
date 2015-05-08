@@ -52,12 +52,14 @@
     <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounting\AccountsCmd.cs" />
     <Compile Include="CustomersForms\AddCustomersFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomersForms\AddCustomersFrm.Designer.cs">
       <DependentUpon>AddCustomersFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomersForms\CustomersCmd.cs" />
     <Compile Include="CustomersForms\EditCustomersFrm.cs">
       <SubType>Form</SubType>
     </Compile>

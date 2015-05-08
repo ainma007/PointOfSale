@@ -317,6 +317,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Form1";
             this.ThemeName = "TelerikMetroBlue";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);

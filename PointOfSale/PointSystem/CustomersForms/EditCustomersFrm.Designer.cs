@@ -30,11 +30,11 @@
         {
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.EditBtn = new Telerik.WinControls.UI.RadButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.CustmoreNameTxtBox = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
@@ -47,11 +47,11 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.Controls.Add(this.EditBtn);
-            this.radGroupBox1.Controls.Add(this.textBox2);
+            this.radGroupBox1.Controls.Add(this.txtAddress);
             this.radGroupBox1.Controls.Add(this.label3);
-            this.radGroupBox1.Controls.Add(this.textBox1);
+            this.radGroupBox1.Controls.Add(this.txtPhone);
             this.radGroupBox1.Controls.Add(this.label2);
-            this.radGroupBox1.Controls.Add(this.CustmoreNameTxtBox);
+            this.radGroupBox1.Controls.Add(this.txtName);
             this.radGroupBox1.Controls.Add(this.label1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
@@ -71,13 +71,14 @@
             this.EditBtn.TabIndex = 4;
             this.EditBtn.Text = "حفظ";
             this.EditBtn.ThemeName = "TelerikMetroBlue";
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(14, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtAddress.Location = new System.Drawing.Point(14, 73);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(292, 20);
+            this.txtAddress.TabIndex = 3;
             // 
             // label3
             // 
@@ -88,12 +89,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "العنوان:";
             // 
-            // textBox1
+            // txtPhone
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtPhone.Location = new System.Drawing.Point(139, 47);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(167, 20);
+            this.txtPhone.TabIndex = 2;
             // 
             // label2
             // 
@@ -104,12 +105,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "رقم الهاتف:";
             // 
-            // CustmoreNameTxtBox
+            // txtName
             // 
-            this.CustmoreNameTxtBox.Location = new System.Drawing.Point(14, 21);
-            this.CustmoreNameTxtBox.Name = "CustmoreNameTxtBox";
-            this.CustmoreNameTxtBox.Size = new System.Drawing.Size(292, 20);
-            this.CustmoreNameTxtBox.TabIndex = 1;
+            this.txtName.Location = new System.Drawing.Point(14, 21);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(292, 20);
+            this.txtName.TabIndex = 1;
             // 
             // label1
             // 
@@ -136,6 +137,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditCustomersFrm";
             this.ThemeName = "TelerikMetroBlue";
+            this.Load += new System.EventHandler(this.EditCustomersFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -149,11 +151,11 @@
 
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.UI.RadButton EditBtn;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox CustmoreNameTxtBox;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
 
