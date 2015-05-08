@@ -57,5 +57,44 @@ namespace PointSystem.CustomersForms
         {
             ManageCustomersFrm_Load(sender, e);
         }
+
+        private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
+        {
+            int col = this.DgvCustomers.CurrentCell.ColumnIndex;
+            // int row = this.DgvUsers.CurrentCell.RowIndex;
+
+            Db.CustomersRow rw = CustomersCmd.GetById(int.Parse(DgvCustomers.CurrentRow.Cells[0].Value.ToString()));
+
+            if (col.ToString() == "5")
+            {
+
+                EditCustomersFrm frm = new EditCustomersFrm();
+
+                frm.TargetCustomer = rw;
+                frm.ShowDialog();
+            }
+
+            if (col.ToString() == "6")
+            {
+
+
+                if (MessageBox.Show("هـــــل تريـــــد الحـــــذف بالفـــعل   ؟  ", "حــــــذف",
+                  MessageBoxButtons.OKCancel,
+                  MessageBoxIcon.Question,
+                  MessageBoxDefaultButton.Button1,
+                  MessageBoxOptions.RtlReading |
+                  MessageBoxOptions.RightAlign) == System.Windows.Forms.DialogResult.OK)
+                {
+
+                    Db.CustomersRow c = DbManager.ShopData.Customers.Where(b => b.ID == rw.ID).Single();
+                    //   c.Status = "DisActive";
+                    DbManager.ShopData.Customers.RemoveCustomersRow(c);
+                    DbManager.SaveChanges();
+                    _Alert.Information("حـــــذف", "تـــــم الحــــذف");
+                   
+                    PopulateDgv();
+                }
+            }
+        }
     }
 }

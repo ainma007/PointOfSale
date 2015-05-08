@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomersFrm));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -142,42 +142,43 @@
             // 
             this.DgvCustomers.MasterTemplate.AllowAddNewRow = false;
             this.DgvCustomers.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ID";
-            gridViewTextBoxColumn5.HeaderText = "الرقم";
-            gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "ID";
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.HeaderText = "الاسم";
-            gridViewTextBoxColumn6.Name = "column2";
-            gridViewTextBoxColumn6.Width = 200;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.HeaderText = "العنوان";
-            gridViewTextBoxColumn7.Name = "column3";
-            gridViewTextBoxColumn7.Width = 300;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.HeaderText = "التلفون";
-            gridViewTextBoxColumn8.Name = "column4";
-            gridViewTextBoxColumn8.Width = 130;
-            gridViewCommandColumn3.EnableExpressionEditor = false;
-            gridViewCommandColumn3.HeaderText = "تعديل";
-            gridViewCommandColumn3.Name = "column1";
-            gridViewCommandColumn4.EnableExpressionEditor = false;
-            gridViewCommandColumn4.HeaderText = "حذف";
-            gridViewCommandColumn4.Name = "column5";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "الرقم";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.HeaderText = "الاسم";
+            gridViewTextBoxColumn2.Name = "column2";
+            gridViewTextBoxColumn2.Width = 200;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.HeaderText = "العنوان";
+            gridViewTextBoxColumn3.Name = "column3";
+            gridViewTextBoxColumn3.Width = 300;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.HeaderText = "التلفون";
+            gridViewTextBoxColumn4.Name = "column4";
+            gridViewTextBoxColumn4.Width = 130;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "تعديل";
+            gridViewCommandColumn1.Name = "column1";
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "حذف";
+            gridViewCommandColumn2.Name = "column5";
             this.DgvCustomers.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewCommandColumn3,
-            gridViewCommandColumn4});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewCommandColumn1,
+            gridViewCommandColumn2});
             this.DgvCustomers.Name = "DgvCustomers";
             this.DgvCustomers.ReadOnly = true;
             this.DgvCustomers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.DgvCustomers.Size = new System.Drawing.Size(762, 322);
             this.DgvCustomers.TabIndex = 0;
             this.DgvCustomers.ThemeName = "TelerikMetroBlue";
+            this.DgvCustomers.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             // 
             // ManageCustomersFrm
             // 
