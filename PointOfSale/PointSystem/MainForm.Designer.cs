@@ -32,7 +32,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.المستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الموظفينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EmployeesBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.البياناتالعامةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -93,7 +93,7 @@
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.المستخدمينToolStripMenuItem,
-            this.الموظفينToolStripMenuItem,
+            this.EmployeesBtn,
             this.toolStripSeparator1,
             this.البياناتالعامةToolStripMenuItem,
             this.toolStripSeparator2,
@@ -107,35 +107,36 @@
             // المستخدمينToolStripMenuItem
             // 
             this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
-            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.المستخدمينToolStripMenuItem.Text = "المستخدمين";
             // 
-            // الموظفينToolStripMenuItem
+            // EmployeesBtn
             // 
-            this.الموظفينToolStripMenuItem.Name = "الموظفينToolStripMenuItem";
-            this.الموظفينToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.الموظفينToolStripMenuItem.Text = "الموظفين";
+            this.EmployeesBtn.Name = "EmployeesBtn";
+            this.EmployeesBtn.Size = new System.Drawing.Size(152, 22);
+            this.EmployeesBtn.Text = "الموظفين";
+            this.EmployeesBtn.Click += new System.EventHandler(this.EmployeesBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // البياناتالعامةToolStripMenuItem
             // 
             this.البياناتالعامةToolStripMenuItem.Name = "البياناتالعامةToolStripMenuItem";
-            this.البياناتالعامةToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.البياناتالعامةToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.البياناتالعامةToolStripMenuItem.Text = "البيانات العامة";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(134, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // خروجToolStripMenuItem
             // 
             this.خروجToolStripMenuItem.Name = "خروجToolStripMenuItem";
-            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.خروجToolStripMenuItem.Text = "خروج";
             // 
             // toolStripSeparator3
@@ -335,7 +336,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الموظفينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EmployeesBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem البياناتالعامةToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

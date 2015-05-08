@@ -1,4 +1,5 @@
 ﻿using PointSystem.CustomersForms;
+using PointSystem.EmployeeForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -146,6 +147,12 @@ namespace PointSystem
         private void CustomersBtn_Click(object sender, EventArgs e)
         {
             ManageCustomersFrm frm = new ManageCustomersFrm();
+            frm.ShowDialog();
+        }
+
+        private void EmployeesBtn_Click(object sender, EventArgs e)
+        {
+            ManageEmployeeFrm frm = new ManageEmployeeFrm();
             frm.ShowDialog();
         }
     }

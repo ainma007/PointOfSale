@@ -31,19 +31,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.WorkPicker = new Telerik.WinControls.UI.RadDateTimePicker();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
-            this.EmployeeAdresstextBox = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.EmployeeSalarytextBox = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.EmployeNametextBox = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
-            this.EmployeeStartDateTimePicker = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeStartDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,13 +70,15 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.EmployeeStartDateTimePicker);
+            this.radGroupBox1.Controls.Add(this.txtPhone);
+            this.radGroupBox1.Controls.Add(this.label5);
+            this.radGroupBox1.Controls.Add(this.WorkPicker);
             this.radGroupBox1.Controls.Add(this.AddBtn);
-            this.radGroupBox1.Controls.Add(this.EmployeeAdresstextBox);
+            this.radGroupBox1.Controls.Add(this.txtAddress);
             this.radGroupBox1.Controls.Add(this.label4);
-            this.radGroupBox1.Controls.Add(this.EmployeeSalarytextBox);
+            this.radGroupBox1.Controls.Add(this.txtSalary);
             this.radGroupBox1.Controls.Add(this.label3);
-            this.radGroupBox1.Controls.Add(this.EmployeNametextBox);
+            this.radGroupBox1.Controls.Add(this.txtName);
             this.radGroupBox1.Controls.Add(this.label2);
             this.radGroupBox1.Controls.Add(this.label1);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -87,6 +91,20 @@
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.ThemeName = "TelerikMetroBlue";
             // 
+            // WorkPicker
+            // 
+            this.WorkPicker.CustomFormat = "";
+            this.WorkPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.WorkPicker.Location = new System.Drawing.Point(167, 47);
+            this.WorkPicker.Name = "WorkPicker";
+            this.WorkPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.WorkPicker.Size = new System.Drawing.Size(91, 21);
+            this.WorkPicker.TabIndex = 3;
+            this.WorkPicker.TabStop = false;
+            this.WorkPicker.Text = "5/8/2015";
+            this.WorkPicker.ThemeName = "Office2013Light";
+            this.WorkPicker.Value = new System.DateTime(2015, 5, 8, 17, 39, 6, 429);
+            // 
             // AddBtn
             // 
             this.AddBtn.Location = new System.Drawing.Point(219, 141);
@@ -95,13 +113,14 @@
             this.AddBtn.TabIndex = 5;
             this.AddBtn.Text = "اضافة";
             this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // EmployeeAdresstextBox
+            // txtAddress
             // 
-            this.EmployeeAdresstextBox.Location = new System.Drawing.Point(12, 104);
-            this.EmployeeAdresstextBox.Name = "EmployeeAdresstextBox";
-            this.EmployeeAdresstextBox.Size = new System.Drawing.Size(246, 20);
-            this.EmployeeAdresstextBox.TabIndex = 4;
+            this.txtAddress.Location = new System.Drawing.Point(12, 104);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(246, 20);
+            this.txtAddress.TabIndex = 4;
             // 
             // label4
             // 
@@ -112,12 +131,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "العنوان:";
             // 
-            // EmployeeSalarytextBox
+            // txtSalary
             // 
-            this.EmployeeSalarytextBox.Location = new System.Drawing.Point(166, 77);
-            this.EmployeeSalarytextBox.Name = "EmployeeSalarytextBox";
-            this.EmployeeSalarytextBox.Size = new System.Drawing.Size(92, 20);
-            this.EmployeeSalarytextBox.TabIndex = 3;
+            this.txtSalary.Location = new System.Drawing.Point(166, 77);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(92, 20);
+            this.txtSalary.TabIndex = 3;
+            this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             // 
             // label3
             // 
@@ -128,26 +148,29 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "الراتب:";
             // 
-            // EmployeNametextBox
+            // txtName
             // 
-            this.EmployeNametextBox.Location = new System.Drawing.Point(12, 19);
-            this.EmployeNametextBox.Name = "EmployeNametextBox";
-            this.EmployeNametextBox.Size = new System.Drawing.Size(246, 20);
-            this.EmployeNametextBox.TabIndex = 1;
+            this.txtName.Location = new System.Drawing.Point(12, 19);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(246, 20);
+            this.txtName.TabIndex = 1;
             // 
-            // EmployeeStartDateTimePicker
+            // txtPhone
             // 
-            this.EmployeeStartDateTimePicker.CustomFormat = "";
-            this.EmployeeStartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.EmployeeStartDateTimePicker.Location = new System.Drawing.Point(167, 47);
-            this.EmployeeStartDateTimePicker.Name = "EmployeeStartDateTimePicker";
-            this.EmployeeStartDateTimePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EmployeeStartDateTimePicker.Size = new System.Drawing.Size(91, 21);
-            this.EmployeeStartDateTimePicker.TabIndex = 3;
-            this.EmployeeStartDateTimePicker.TabStop = false;
-            this.EmployeeStartDateTimePicker.Text = "08/05/2015";
-            this.EmployeeStartDateTimePicker.ThemeName = "Office2013Light";
-            this.EmployeeStartDateTimePicker.Value = new System.DateTime(2015, 5, 8, 17, 39, 6, 429);
+            this.txtPhone.Location = new System.Drawing.Point(22, 47);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(92, 20);
+            this.txtPhone.TabIndex = 7;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(115, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "التلفون";
             // 
             // AddEmployeeFrm
             // 
@@ -165,11 +188,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEmployeeFrm";
             this.ThemeName = "TelerikMetroBlue";
+            this.Load += new System.EventHandler(this.AddEmployeeFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeStartDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -182,12 +206,14 @@
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
         private Telerik.WinControls.UI.RadButton AddBtn;
-        private System.Windows.Forms.TextBox EmployeeAdresstextBox;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox EmployeeSalarytextBox;
+        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox EmployeNametextBox;
+        private System.Windows.Forms.TextBox txtName;
         private Telerik.WinControls.Themes.Office2013LightTheme office2013LightTheme1;
-        private Telerik.WinControls.UI.RadDateTimePicker EmployeeStartDateTimePicker;
+        private Telerik.WinControls.UI.RadDateTimePicker WorkPicker;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label label5;
     }
 }

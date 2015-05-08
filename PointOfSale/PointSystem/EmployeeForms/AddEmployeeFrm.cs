@@ -17,5 +17,97 @@ namespace PointSystem.EmployeeForms
         {
             InitializeComponent();
         }
+
+        static DataManager DbManager = new DataManager();
+
+        public static List<Db.EmployeesRow> GetAllEmployees()
+        {
+            DbManager = new DataManager();
+            List<Db.EmployeesRow> GetAll = (from emp
+                                            in DbManager.ShopData.Employees
+                                            orderby emp.EmployeeName ascending
+                                            where emp.Status == "Active"
+                                            select emp).ToList();
+            return GetAll;
+        }
+
+
+        
+ 
+
+
+        private void AddEmployeeFrm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtName.Text == "" || txtSalary.Text == "")
+                {
+                    _Alert.Attention("تنبـــــيه", "أدخـــــل الاســــم والراتب للضرورة");
+                    return;
+                }
+                //============================================================
+                Db.EmployeesRow emp = EmployeesCmd.GetByName(txtName.Text);
+                _Alert.Attention("تنــــيه", "موجــــود بالفـعل");
+                ClearTxt(); return;
+            }
+            catch (Exception)
+            {
+                DbManager = new DataManager();
+                Db.EmployeesRow emp = DbManager.ShopData.Employees.NewEmployeesRow();
+                emp.EmployeeName = txtName.Text;
+                emp.Address = txtAddress.Text;
+                emp.Phone = txtPhone.Text;
+                emp.StartWorkAt = WorkPicker.Value;
+                emp.Salary = Convert.ToDouble(txtSalary.Text);
+              
+                emp.Status = "Active";
+                DbManager.ShopData.Employees.AddEmployeesRow(emp);
+                DbManager.SaveChanges();
+                //==================================================================
+                // Phone 
+                DbManager = new DataManager();
+                Db.PhonesRow ph = DbManager.ShopData.Phones.NewPhonesRow();
+                ph.PName = txtName.Text;
+                ph.Phone = txtPhone.Text;
+              
+                DbManager.ShopData.Phones.AddPhonesRow(ph);
+                DbManager.SaveChanges();
+
+                //==================================================================
+                _Alert.Information("حـــــــفظ", "تــم الحــــــفظ بنجــاح");
+
+                ClearTxt();
+         
+            }
+        }
+
+   
+
+        void ClearTxt()
+        {
+            txtAddress.Text = "";
+            txtName.Text = "";
+            txtPhone.Text = "";
+            txtSalary.Text = "";
+           
+            txtName.Focus();
+        }
+
+        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Helper.TextKeyPress(txtSalary, sender, e);
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Helper.TextKeyPressWithoutDot(txtPhone, e);
+        }
+
+
     }
 }

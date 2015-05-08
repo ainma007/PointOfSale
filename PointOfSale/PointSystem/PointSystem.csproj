@@ -90,6 +90,7 @@
     <Compile Include="EmployeeForms\EditEmployeeFrm.Designer.cs">
       <DependentUpon>EditEmployeeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeForms\EmployeesCmd.cs" />
     <Compile Include="EmployeeForms\ManageEmployeeFrm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -17,7 +17,7 @@ namespace PointSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageCustomersFrm());
+            Application.Run(new  MainForm ());
         }
     }
 }
