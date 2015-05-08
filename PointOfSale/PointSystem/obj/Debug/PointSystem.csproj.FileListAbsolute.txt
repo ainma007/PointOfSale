@@ -1,2 +1,17 @@
 C:\Users\BlackSword\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\bin\Debug\PointSystem.exe.config
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\bin\Debug\PointSystem.exe.config
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\bin\Debug\PointSystem.exe
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\bin\Debug\PointSystem.pdb
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.csprojResolveAssemblyReference.cache
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.CustomersForms.AddCustomersFrm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.CustomersForms.EditCustomersFrm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.CustomersForms.ManageCustomersFrm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.EmployeeForms.AddEmployeeFrm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.EmployeeForms.EditEmployeeFrm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.EmployeeForms.ManageEmployeeFrm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.MainForm.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.Properties.Resources.resources
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.csproj.GenerateResource.Cache
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.exe.licenses
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.exe
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.pdb

@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomersFrm));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -67,7 +73,7 @@
             this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(57, 22);
+            this.AddBtn.Size = new System.Drawing.Size(54, 22);
             this.AddBtn.Text = "اضافة";
             // 
             // toolStripSeparator1
@@ -81,7 +87,7 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(59, 22);
+            this.RefreshBtn.Size = new System.Drawing.Size(55, 22);
             this.RefreshBtn.Text = "تحديث";
             // 
             // toolStripSeparator2
@@ -95,7 +101,7 @@
             this.PrintBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.PrintBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PrintBtn.Name = "PrintBtn";
-            this.PrintBtn.Size = new System.Drawing.Size(57, 22);
+            this.PrintBtn.Size = new System.Drawing.Size(55, 22);
             this.PrintBtn.Text = "طباعة";
             // 
             // statusStrip1
@@ -122,14 +128,46 @@
             // 
             // CustomerGridView
             // 
+            this.CustomerGridView.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CustomerGridView.Cursor = System.Windows.Forms.Cursors.Default;
             this.CustomerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerGridView.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CustomerGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CustomerGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CustomerGridView.Location = new System.Drawing.Point(2, 18);
             // 
             // CustomerGridView
             // 
             this.CustomerGridView.MasterTemplate.AllowAddNewRow = false;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "الرقم";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.HeaderText = "column2";
+            gridViewTextBoxColumn2.Name = "column2";
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.HeaderText = "column3";
+            gridViewTextBoxColumn3.Name = "column3";
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.HeaderText = "column4";
+            gridViewTextBoxColumn4.Name = "column4";
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "column5";
+            gridViewCommandColumn1.Name = "column5";
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "column6";
+            gridViewCommandColumn2.Name = "column6";
+            this.CustomerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewCommandColumn1,
+            gridViewCommandColumn2});
             this.CustomerGridView.Name = "CustomerGridView";
             this.CustomerGridView.ReadOnly = true;
+            this.CustomerGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.CustomerGridView.Size = new System.Drawing.Size(762, 322);
             this.CustomerGridView.TabIndex = 0;
             this.CustomerGridView.ThemeName = "TelerikMetroBlue";

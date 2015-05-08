@@ -70,6 +70,12 @@
     <Compile Include="CustomersForms\ManageCustomersFrm.Designer.cs">
       <DependentUpon>ManageCustomersFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataManager.cs" />
+    <Compile Include="Db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Db.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForms\AddEmployeeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,8 @@
     <Compile Include="EmployeeForms\ManageEmployeeFrm.Designer.cs">
       <DependentUpon>ManageEmployeeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="InformationsClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +104,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThePen.cs" />
+    <Compile Include="_Alert.cs" />
     <EmbeddedResource Include="CustomersForms\AddCustomersFrm.resx">
       <DependentUpon>AddCustomersFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,7 +136,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Db.xsc">
+      <DependentUpon>Db.xsd</DependentUpon>
+    </None>
+    <None Include="Db.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Db.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Db.xss">
+      <DependentUpon>Db.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,6 +165,90 @@
   <ItemGroup>
     <Folder Include="ItemsForms\" />
     <Folder Include="SupplierForms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1427924794_Log Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1427925025_expense-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1427925103_expense-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1427925200_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1427925277_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1427925349_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccountDaily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AccountDaily1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BAbout.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BAlaert.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BError.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BInfo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOkey.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BWarnnig.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-48751.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pay32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refrech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test-tubes-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
