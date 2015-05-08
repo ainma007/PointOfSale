@@ -1,1 +1,2 @@
 C:\Users\BlackSword\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\bin\Debug\PointSystem.exe.config
+C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\bin\Debug\PointSystem.exe.config
