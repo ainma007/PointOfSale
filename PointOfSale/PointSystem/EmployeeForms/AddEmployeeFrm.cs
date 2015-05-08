@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
-namespace PointSystem
+namespace PointSystem.EmployeeForms
 {
-    public partial class MainForm : RadForm
+    public partial class AddEmployeeFrm : RadForm
     {
-        public MainForm()
+        public AddEmployeeFrm()
         {
             InitializeComponent();
         }

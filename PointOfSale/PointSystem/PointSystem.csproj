@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.WinControls, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Telerik.WinControls.GridView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
@@ -68,6 +70,24 @@
     <Compile Include="CustomersForms\ManageCustomersFrm.Designer.cs">
       <DependentUpon>ManageCustomersFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeForms\AddEmployeeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForms\AddEmployeeFrm.Designer.cs">
+      <DependentUpon>AddEmployeeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForms\EditEmployeeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForms\EditEmployeeFrm.Designer.cs">
+      <DependentUpon>EditEmployeeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForms\ManageEmployeeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForms\ManageEmployeeFrm.Designer.cs">
+      <DependentUpon>ManageEmployeeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +104,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomersForms\ManageCustomersFrm.resx">
       <DependentUpon>ManageCustomersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\AddEmployeeFrm.resx">
+      <DependentUpon>AddEmployeeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\EditEmployeeFrm.resx">
+      <DependentUpon>EditEmployeeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\ManageEmployeeFrm.resx">
+      <DependentUpon>ManageEmployeeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -112,7 +141,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EmployeeForms\" />
     <Folder Include="ItemsForms\" />
     <Folder Include="SupplierForms\" />
   </ItemGroup>
