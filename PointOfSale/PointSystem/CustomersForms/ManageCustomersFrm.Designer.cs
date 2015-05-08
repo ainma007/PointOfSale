@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomersFrm));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,12 +44,12 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.CustomerGridView = new Telerik.WinControls.UI.RadGridView();
+            this.DgvCustomers = new Telerik.WinControls.UI.RadGridView();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,7 @@
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(54, 22);
             this.AddBtn.Text = "اضافة";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -89,6 +90,7 @@
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(55, 22);
             this.RefreshBtn.Text = "تحديث";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -115,7 +117,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.CustomerGridView);
+            this.radGroupBox1.Controls.Add(this.DgvCustomers);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderAlignment = Telerik.WinControls.UI.HeaderAlignment.Center;
             this.radGroupBox1.HeaderText = "بيانات الزبائن";
@@ -126,51 +128,56 @@
             this.radGroupBox1.Text = "بيانات الزبائن";
             this.radGroupBox1.ThemeName = "TelerikMetroBlue";
             // 
-            // CustomerGridView
+            // DgvCustomers
             // 
-            this.CustomerGridView.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CustomerGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CustomerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerGridView.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.CustomerGridView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CustomerGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CustomerGridView.Location = new System.Drawing.Point(2, 18);
+            this.DgvCustomers.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DgvCustomers.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvCustomers.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.DgvCustomers.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DgvCustomers.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DgvCustomers.Location = new System.Drawing.Point(2, 18);
             // 
-            // CustomerGridView
+            // DgvCustomers
             // 
-            this.CustomerGridView.MasterTemplate.AllowAddNewRow = false;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "الرقم";
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.HeaderText = "column2";
-            gridViewTextBoxColumn2.Name = "column2";
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.HeaderText = "column3";
-            gridViewTextBoxColumn3.Name = "column3";
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.HeaderText = "column4";
-            gridViewTextBoxColumn4.Name = "column4";
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "column5";
-            gridViewCommandColumn1.Name = "column5";
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "column6";
-            gridViewCommandColumn2.Name = "column6";
-            this.CustomerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewCommandColumn1,
-            gridViewCommandColumn2});
-            this.CustomerGridView.Name = "CustomerGridView";
-            this.CustomerGridView.ReadOnly = true;
-            this.CustomerGridView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.CustomerGridView.Size = new System.Drawing.Size(762, 322);
-            this.CustomerGridView.TabIndex = 0;
-            this.CustomerGridView.ThemeName = "TelerikMetroBlue";
+            this.DgvCustomers.MasterTemplate.AllowAddNewRow = false;
+            this.DgvCustomers.MasterTemplate.AutoGenerateColumns = false;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ID";
+            gridViewTextBoxColumn5.HeaderText = "الرقم";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "ID";
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.HeaderText = "الاسم";
+            gridViewTextBoxColumn6.Name = "column2";
+            gridViewTextBoxColumn6.Width = 200;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.HeaderText = "العنوان";
+            gridViewTextBoxColumn7.Name = "column3";
+            gridViewTextBoxColumn7.Width = 300;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.HeaderText = "التلفون";
+            gridViewTextBoxColumn8.Name = "column4";
+            gridViewTextBoxColumn8.Width = 130;
+            gridViewCommandColumn3.EnableExpressionEditor = false;
+            gridViewCommandColumn3.HeaderText = "تعديل";
+            gridViewCommandColumn3.Name = "column1";
+            gridViewCommandColumn4.EnableExpressionEditor = false;
+            gridViewCommandColumn4.HeaderText = "حذف";
+            gridViewCommandColumn4.Name = "column5";
+            this.DgvCustomers.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewCommandColumn3,
+            gridViewCommandColumn4});
+            this.DgvCustomers.Name = "DgvCustomers";
+            this.DgvCustomers.ReadOnly = true;
+            this.DgvCustomers.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DgvCustomers.Size = new System.Drawing.Size(762, 322);
+            this.DgvCustomers.TabIndex = 0;
+            this.DgvCustomers.ThemeName = "TelerikMetroBlue";
             // 
             // ManageCustomersFrm
             // 
@@ -190,12 +197,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageCustomersFrm";
             this.ThemeName = "TelerikMetroBlue";
+            this.Load += new System.EventHandler(this.ManageCustomersFrm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,6 +221,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton PrintBtn;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        private Telerik.WinControls.UI.RadGridView CustomerGridView;
+        private Telerik.WinControls.UI.RadGridView DgvCustomers;
     }
 }
