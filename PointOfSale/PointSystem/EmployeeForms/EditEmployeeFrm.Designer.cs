@@ -31,6 +31,8 @@
             this.telerikMetroBlueTheme1 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             this.office2013LightTheme1 = new Telerik.WinControls.Themes.Office2013LightTheme();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,8 +42,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -69,31 +69,48 @@
             this.radGroupBox1.HeaderText = "";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(335, 185);
+            this.radGroupBox1.Size = new System.Drawing.Size(335, 210);
             this.radGroupBox1.TabIndex = 3;
             this.radGroupBox1.ThemeName = "TelerikMetroBlue";
             // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(100, 73);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(158, 20);
+            this.txtPhone.TabIndex = 3;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(262, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "رقم الهاتف:";
+            // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(219, 141);
+            this.SaveBtn.Location = new System.Drawing.Point(219, 167);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(110, 34);
-            this.SaveBtn.TabIndex = 5;
+            this.SaveBtn.TabIndex = 6;
             this.SaveBtn.Text = "  حفظ";
             this.SaveBtn.ThemeName = "Office2013Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(12, 104);
+            this.txtAddress.Location = new System.Drawing.Point(12, 129);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(246, 20);
-            this.txtAddress.TabIndex = 4;
+            this.txtAddress.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(259, 106);
+            this.label4.Location = new System.Drawing.Point(259, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 6;
@@ -101,16 +118,16 @@
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(166, 77);
+            this.txtSalary.Location = new System.Drawing.Point(166, 101);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(92, 20);
-            this.txtSalary.TabIndex = 3;
+            this.txtSalary.TabIndex = 4;
             this.txtSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalary_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 79);
+            this.label3.Location = new System.Drawing.Point(259, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 4;
@@ -120,13 +137,13 @@
             // 
             this.WorkPicker.CustomFormat = "";
             this.WorkPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.WorkPicker.Location = new System.Drawing.Point(166, 47);
+            this.WorkPicker.Location = new System.Drawing.Point(166, 44);
             this.WorkPicker.Name = "WorkPicker";
             this.WorkPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.WorkPicker.Size = new System.Drawing.Size(91, 21);
             this.WorkPicker.TabIndex = 2;
             this.WorkPicker.TabStop = false;
-            this.WorkPicker.Text = "5/8/2015";
+            this.WorkPicker.Text = "08/05/2015";
             this.WorkPicker.ThemeName = "Office2013Light";
             this.WorkPicker.Value = new System.DateTime(2015, 5, 8, 17, 39, 6, 429);
             // 
@@ -140,7 +157,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 51);
+            this.label2.Location = new System.Drawing.Point(259, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 1;
@@ -155,29 +172,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم الموظف:";
             // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(25, 51);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(92, 20);
-            this.txtPhone.TabIndex = 7;
-            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(118, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "التلفون";
-            // 
             // EditEmployeeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(335, 185);
+            this.ClientSize = new System.Drawing.Size(335, 210);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "EditEmployeeFrm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

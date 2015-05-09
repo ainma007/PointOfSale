@@ -116,6 +116,24 @@
     <Compile Include="Reports\FrmViewer.Designer.cs">
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupplierForms\AddSupplierFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierForms\AddSupplierFrm.Designer.cs">
+      <DependentUpon>AddSupplierFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierForms\EditSupplierFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierForms\EditSupplierFrm.Designer.cs">
+      <DependentUpon>EditSupplierFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierForms\ManageSupplierFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplierForms\ManageSupplierFrm.Designer.cs">
+      <DependentUpon>ManageSupplierFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThePen.cs" />
     <Compile Include="_Alert.cs" />
     <EmbeddedResource Include="CustomersForms\AddCustomersFrm.resx">
@@ -154,6 +172,15 @@
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\RepCustomers.rdlc" />
+    <EmbeddedResource Include="SupplierForms\AddSupplierFrm.resx">
+      <DependentUpon>AddSupplierFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierForms\EditSupplierFrm.resx">
+      <DependentUpon>EditSupplierFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierForms\ManageSupplierFrm.resx">
+      <DependentUpon>ManageSupplierFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Db.xsc">
       <DependentUpon>Db.xsd</DependentUpon>
     </None>
@@ -180,7 +207,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ItemsForms\" />
-    <Folder Include="SupplierForms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1427924794_Log Out.png" />
