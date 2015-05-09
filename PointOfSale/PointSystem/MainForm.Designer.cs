@@ -40,7 +40,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.CustomersBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.btnSuppliers = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -73,7 +73,7 @@
             this.toolStripSeparator3,
             this.CustomersBtn,
             this.toolStripSeparator8,
-            this.toolStripButton6,
+            this.btnSuppliers,
             this.toolStripSeparator9,
             this.toolStripButton7,
             this.toolStripSeparator10,
@@ -107,36 +107,36 @@
             // المستخدمينToolStripMenuItem
             // 
             this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
-            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.المستخدمينToolStripMenuItem.Text = "المستخدمين";
             // 
             // EmployeesBtn
             // 
             this.EmployeesBtn.Name = "EmployeesBtn";
-            this.EmployeesBtn.Size = new System.Drawing.Size(152, 22);
+            this.EmployeesBtn.Size = new System.Drawing.Size(137, 22);
             this.EmployeesBtn.Text = "الموظفين";
             this.EmployeesBtn.Click += new System.EventHandler(this.EmployeesBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(134, 6);
             // 
             // البياناتالعامةToolStripMenuItem
             // 
             this.البياناتالعامةToolStripMenuItem.Name = "البياناتالعامةToolStripMenuItem";
-            this.البياناتالعامةToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.البياناتالعامةToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.البياناتالعامةToolStripMenuItem.Text = "البيانات العامة";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(134, 6);
             // 
             // خروجToolStripMenuItem
             // 
             this.خروجToolStripMenuItem.Name = "خروجToolStripMenuItem";
-            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.خروجToolStripMenuItem.Text = "خروج";
             // 
             // toolStripSeparator3
@@ -158,13 +158,14 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton6
+            // btnSuppliers
             // 
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(65, 22);
-            this.toolStripButton6.Text = "الموردين";
+            this.btnSuppliers.Image = ((System.Drawing.Image)(resources.GetObject("btnSuppliers.Image")));
+            this.btnSuppliers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(65, 22);
+            this.btnSuppliers.Text = "الموردين";
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // toolStripSeparator9
             // 
@@ -344,7 +345,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton CustomersBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton btnSuppliers;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
