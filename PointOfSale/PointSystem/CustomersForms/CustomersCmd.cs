@@ -15,9 +15,8 @@ namespace PointSystem.CustomersForms
         public static List<Db.CustomersRow> GetAllCustomers()
         {
             DbManager = new DataManager();
-            List<Db.CustomersRow> GetAll = (from c in DbManager.ShopData.Customers
-                                            where c.Status == "Active"
-                                            select c).ToList();
+            List<Db.CustomersRow> GetAll =  DbManager.ShopData.Customers.Where (c=> c.Status == "Active").ToList ();
+                                      
             return GetAll;
         }
 

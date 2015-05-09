@@ -16,10 +16,8 @@ namespace PointSystem.EmployeeForms
         {
             DbManager = new DataManager();
 
-            List<Db.EmployeesRow> GetAll = (from emp
-                                            in DbManager.ShopData.Employees
-                                            orderby emp.EmployeeName ascending
-                                            select emp).ToList();
+            List<Db.EmployeesRow> GetAll = DbManager.ShopData.Employees.ToList();
+                      
             return GetAll;
         }
 
@@ -27,20 +25,16 @@ namespace PointSystem.EmployeeForms
         {
             DbManager = new DataManager();
 
-            Db.EmployeesRow rw = (from emp
-                                  in DbManager.ShopData.Employees
-                                  where emp.ID == xid
-                                  select emp).Single();
+            Db.EmployeesRow rw = 
+                                 DbManager.ShopData.Employees.Where ( emp=> emp.ID == xid).Single ();
+                                
             return rw;
         }
         public static Db.EmployeesRow GetByName(string empname)
         {
 
             DbManager = new DataManager();
-            Db.EmployeesRow rw = (from emp
-                                  in DbManager.ShopData.Employees
-                                  where emp.EmployeeName == empname
-                                  select emp).Single();
+            Db.EmployeesRow rw = DbManager.ShopData.Employees.Where(emp => emp.EmployeeName == empname).Single();
             return rw;
         }
 

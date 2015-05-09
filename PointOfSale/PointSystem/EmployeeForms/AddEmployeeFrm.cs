@@ -23,11 +23,7 @@ namespace PointSystem.EmployeeForms
         public static List<Db.EmployeesRow> GetAllEmployees()
         {
             DbManager = new DataManager();
-            List<Db.EmployeesRow> GetAll = (from emp
-                                            in DbManager.ShopData.Employees
-                                            orderby emp.EmployeeName ascending
-                                            where emp.Status == "Active"
-                                            select emp).ToList();
+            List<Db.EmployeesRow> GetAll = DbManager.ShopData.Employees.Where(emp => emp.Status == "Active").ToList();
             return GetAll;
         }
 
