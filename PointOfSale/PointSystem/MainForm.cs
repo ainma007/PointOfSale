@@ -18,7 +18,7 @@ namespace PointSystem
         public MainForm()
         {
             InitializeComponent();
-
+            Helper.SetKeyboardLanguage("ar-SA"); 
 
             #region "      Load Home Informations          "
             try
