@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using PointSystem.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -95,6 +97,16 @@ namespace PointSystem.CustomersForms
                     PopulateDgv();
                 }
             }
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            DbManager = new DataManager();
+
+            List<Db.CustomersRow> GetAll = DbManager.ShopData.Customers.Where (c=> c.Status == "Active").ToList ();
+
+            Helper.DisplayReport("RepCustomers", GetAll);
+
         }
     }
 }

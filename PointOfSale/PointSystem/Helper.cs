@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using PointSystem.Reports;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -428,6 +430,21 @@ namespace PointSystem
         }
 
         #endregion
+
+        #region "    Reports     "
+        public static void DisplayReport(string reportname, object datasource)
+        {
+            ReportDataSource rs = new ReportDataSource();
+            rs.Name = "DataSet1";
+            rs.Value = datasource;
+            FrmViewer frm = new FrmViewer();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "PointSystem.Reports." + reportname + ".rdlc";
+            frm.ShowDialog();
+        }
+
+        #endregion 
 
         ~Helper() { }
         public void Dispose()
