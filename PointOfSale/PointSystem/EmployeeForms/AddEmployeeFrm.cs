@@ -20,7 +20,7 @@ namespace PointSystem.EmployeeForms
 
         static DataManager DbManager = new DataManager();
 
-        public static List<Db.EmployeesRow> GetAllEmployees()
+        public List<Db.EmployeesRow> GetAllEmployees()
         {
             DbManager = new DataManager();
             List<Db.EmployeesRow> GetAll = DbManager.ShopData.Employees.Where(emp => emp.Status == "Active").ToList();
@@ -28,9 +28,15 @@ namespace PointSystem.EmployeeForms
         }
 
 
-        
- 
 
+
+        public Db.EmployeesRow GetByName(string empname)
+        {
+
+            DbManager = new DataManager();
+            Db.EmployeesRow rw = DbManager.ShopData.Employees.Where(emp => emp.EmployeeName == empname).Single();
+            return rw;
+        }
 
         private void AddEmployeeFrm_Load(object sender, EventArgs e)
         {
@@ -43,12 +49,12 @@ namespace PointSystem.EmployeeForms
             {
                 if (txtName.Text == "" || txtSalary.Text == "")
                 {
-                    _Alert.Attention("تنبـــــيه", "أدخـــــل الاســــم والراتب للضرورة");
+                    Alert.Attention("تنبـــــيه", "أدخـــــل الاســــم والراتب للضرورة");
                     return;
                 }
                 //============================================================
-                Db.EmployeesRow emp = EmployeesCmd.GetByName(txtName.Text);
-                _Alert.Attention("تنــــيه", "موجــــود بالفـعل");
+                Db.EmployeesRow emp = GetByName(txtName.Text);
+                Alert.Attention("تنــــيه", "موجــــود بالفـعل");
                 ClearTxt(); return;
             }
             catch (Exception)
@@ -75,7 +81,7 @@ namespace PointSystem.EmployeeForms
                 DbManager.SaveChanges();
 
                 //==================================================================
-                _Alert.Information("حـــــــفظ", "تــم الحــــــفظ بنجــاح");
+                Alert.Information("حـــــــفظ", "تــم الحــــــفظ بنجــاح");
 
                 ClearTxt();
          
@@ -96,14 +102,21 @@ namespace PointSystem.EmployeeForms
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Helper.TextKeyPress(txtSalary, sender, e);
+            xHelper.TextKeyPress(txtSalary, sender, e);
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Helper.TextKeyPressWithoutDot(txtPhone, e);
+            xHelper.TextKeyPressWithoutDot(txtPhone, e);
         }
 
+        Helper xHelper = new Helper();
+        _Alert Alert = new _Alert();
 
+        private void AddEmployeeFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            xHelper.Dispose();
+            Alert.Dispose();
+        }
     }
 }

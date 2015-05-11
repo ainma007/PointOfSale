@@ -145,6 +145,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCustomers";
             this.ThemeName = "TelerikMetroBlue";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddCustomersFrm_FormClosing);
             this.Load += new System.EventHandler(this.AddCustomersFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

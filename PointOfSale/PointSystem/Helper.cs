@@ -25,7 +25,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="Dgv">DataGridView Name</param>
         ///
-        public static void GridStyle(DataGridView Dgv)
+        public void GridStyle(DataGridView Dgv)
         {
             if (Dgv.ColumnCount != 0)
             {
@@ -49,7 +49,7 @@ namespace PointSystem
         /// 
         /// </summary>
         /// <param name="Dgv">DataGridView Name</param>
-        public static void GridFullStyle(DataGridView Dgv)
+        public void GridFullStyle(DataGridView Dgv)
         {
             if (Dgv.ColumnCount != 0)
             {
@@ -88,7 +88,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="Dgv">DataGridView Name </param>
         /// <param name="TargetCellValue">Insert The value That are looking for at Cell As String value </param>
-        public static void GridSearchCell(DataGridView Dgv, string TargetCellValue)
+        public void GridSearchCell(DataGridView Dgv, string TargetCellValue)
         {
             if (Dgv.Rows.Count != 0)
             {
@@ -111,7 +111,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="dggv">Target DataGridView </param>
         /// <param name="ColmnsIndx"> Columns Index</param>
-        public static double TotalSumGridCellsValue(DataGridView Dgv, int CellIndx)
+        public double TotalSumGridCellsValue(DataGridView Dgv, int CellIndx)
         {
 
             double tot = 0;
@@ -124,7 +124,7 @@ namespace PointSystem
             }
             return tot;
         }
-
+        _Alert Alert = new _Alert();
         /// <summary>
         /// This method must be at DataGridView_CellValidating Event  
         /// Process : When you need to insert Numaric values at Columns
@@ -132,7 +132,7 @@ namespace PointSystem
         /// <param name="dggv">DataGridView Name</param>
         /// <param name="e"> Insert e handle </param>
         /// <param name="ColmnsIndx"> Insert Columns index</param>
-        public static void GridNomaricCell(DataGridView dgv, DataGridViewCellValidatingEventArgs e, params int[] ColmnsIndx)
+        public void GridNomaricCell(DataGridView dgv, DataGridViewCellValidatingEventArgs e, params int[] ColmnsIndx)
         {
             foreach (var item in ColmnsIndx)
             {
@@ -143,7 +143,7 @@ namespace PointSystem
                     if (!double.TryParse(Convert.ToString(e.FormattedValue), out i) && e.FormattedValue != "")
                     {
                         e.Cancel = true;
-                        _Alert.Error("أدخـــــل ارقـــــام فـــقط");
+                        Alert.Error("أدخـــــل ارقـــــام فـــقط");
                     }
                 }
 
@@ -154,7 +154,7 @@ namespace PointSystem
 
         #region " ^^^ DataGridViewCell  AutoComplate "
 
-        private static void FillData(AutoCompleteStringCollection col, string[] da)
+        private void FillData(AutoCompleteStringCollection col, string[] da)
         {
             foreach (string i in da)
             {
@@ -169,7 +169,7 @@ namespace PointSystem
         /// <param name="ColNameOrHeaderText">Insert Column Name Or Column HeaderText </param>
         /// <param name="YourData"> Insert DataSource Of Target Column  And Must Be ToArray() </param>
         /// <param name="e"> Insert The Handle Look Like e </param>
-        public static void GridCellAutoComplate(DataGridView dgv, string ColNameOrHeaderText, string[] YourData, DataGridViewEditingControlShowingEventArgs e)
+        public void GridCellAutoComplate(DataGridView dgv, string ColNameOrHeaderText, string[] YourData, DataGridViewEditingControlShowingEventArgs e)
         {
             DataGridViewColumn clm = new DataGridViewColumn();
             clm.Name = ColNameOrHeaderText;
@@ -194,7 +194,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="TargetTextBox">TextBox Name </param>
         /// <param name="e">Insert e Only</param>
-        public static void TextKeyPress(TextBox TargetTextBox, object sender, KeyPressEventArgs e)
+        public void TextKeyPress(TextBox TargetTextBox, object sender, KeyPressEventArgs e)
         {
 
 
@@ -217,7 +217,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="TargetTextBox"></param>
         /// <param name="e"></param>
-        public static void TextKeyPressWithoutDot(TextBox TargetTextBox, KeyPressEventArgs e)
+        public void TextKeyPressWithoutDot(TextBox TargetTextBox, KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == '£')
             {
@@ -237,7 +237,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="TextBoxName">TextBox Name </param>
         /// <param name="e">Insert e Only</param>
-        public static void TextKeyDown(TextBox TextBoxName, KeyEventArgs e)
+        public void TextKeyDown(TextBox TextBoxName, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -261,7 +261,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="TextBoxName">TextBox name </param>
         /// <param name="Datasource"> DataSource </param>
-        public static void TextBoxAutoComplate(TextBox TextBoxName, string[] Datasource)
+        public void TextBoxAutoComplate(TextBox TextBoxName, string[] Datasource)
         {
             TextBoxName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             TextBoxName.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -279,7 +279,7 @@ namespace PointSystem
         /// </summary>
         /// <param name="FolderFullPatth">Insert Full Folder Path</param>
         /// <param name="LockedStatus">Insert True Or False</param>
-        public static void LockedFolder(string FolderFullPatth, bool LockedStatus)
+        public void LockedFolder(string FolderFullPatth, bool LockedStatus)
         {
             DirectoryInfo dInfo = new DirectoryInfo(FolderFullPatth);
 
@@ -309,7 +309,7 @@ namespace PointSystem
         /// <param name="TotalCost"> Insert The Total Number that you need to get discount value from it </param>
         /// <param name="DiscountValue"> Insert The Discount value </param>
         /// <returns> Return Double Value</returns>
-        public static double ComputeDiscount(double TotalCost, double DiscountValue)
+        public double ComputeDiscount(double TotalCost, double DiscountValue)
         {
             var NetTotalCostPrice = TotalCost - (TotalCost * (DiscountValue / 100));
 
@@ -319,7 +319,7 @@ namespace PointSystem
         #endregion
 
         #region " Edit Price      "
-        public static double EditPrice(int OldQty, double OldPrice, int NewQty, double NewPrice)
+        public double EditPrice(int OldQty, double OldPrice, int NewQty, double NewPrice)
         {
             double NetPrice;
             double FirstPrice = OldPrice * OldQty;
@@ -336,7 +336,7 @@ namespace PointSystem
         #endregion
 
         #region "  Culture   "
-        public static void SetKeyboardLanguage(string CultureName)
+        public void SetKeyboardLanguage(string CultureName)
         {
             System.Globalization.CultureInfo MyLang = new System.Globalization.CultureInfo(CultureName);
             InputLanguage InLang = InputLanguage.FromCulture(MyLang);
@@ -346,7 +346,7 @@ namespace PointSystem
         #endregion
 
         #region "     Samular Item      "
-        public static bool SamularItem(DataGridView Dgv, string searchValue)
+        public bool SamularItem(DataGridView Dgv, string searchValue)
         {
 
             int rowIndex = 1;
@@ -368,7 +368,7 @@ namespace PointSystem
                 }
                 if (valueResulet != true)
                 {
-                    _Alert.Attention("تنبيه", " موجود مسبقا " + searchValue);
+                    Alert.Attention("تنبيه", " موجود مسبقا " + searchValue);
                     return true;
                 }
             }
@@ -381,6 +381,7 @@ namespace PointSystem
         #region "       Edit Assets Price_Yearly        "
 
         static DataManager DbManager = new DataManager();
+
         public static void EditAssetsPrice_Yearly()
         {
             DbManager = new DataManager();
@@ -413,8 +414,8 @@ namespace PointSystem
                     #endregion
 
                     #region  "    $$$ The Pen $$$      "
-
-                    ThePen.Writer("الاصول", 0, ast.AccountID, Asst.DepreciateValue, "خصم نسبة الاهلاك من  /  " + ast.AssetName);
+                    ThePen xpen = new ThePen();
+                    xpen.Writer("الاصول", 0, ast.AccountID, Asst.DepreciateValue, "خصم نسبة الاهلاك من  /  " + ast.AssetName);
 
                     #endregion
 
@@ -432,7 +433,7 @@ namespace PointSystem
         #endregion
 
         #region "    Reports     "
-        public static void DisplayReport(string reportname, object datasource)
+        public void DisplayReport(string reportname, object datasource)
         {
             ReportDataSource rs = new ReportDataSource();
             rs.Name = "DataSet1";
@@ -440,11 +441,13 @@ namespace PointSystem
             FrmViewer frm = new FrmViewer();
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rs);
-            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "PointSystem.Reports." + reportname + ".rdlc";
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Shopping.Reports." + reportname + ".rdlc";
             frm.ShowDialog();
         }
 
-        #endregion 
+        #endregion
+
+
 
         ~Helper() { }
         public void Dispose()

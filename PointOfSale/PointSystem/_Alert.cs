@@ -80,7 +80,7 @@ namespace PointSystem
 
 
         #region "  Info      "
-        public static void Information(string Msg)
+        public void Information(string Msg)
         {
 
             CreateMsgFrm();
@@ -94,7 +94,7 @@ namespace PointSystem
 
         }
 
-        public static void Information(string Title, string Msg)
+        public  void Information(string Title, string Msg)
         {
 
             CreateMsgFrm();
@@ -114,7 +114,7 @@ namespace PointSystem
 
 
         #region "  Error  "
-        public static void Error(string Title, string Msg)
+        public  void Error(string Title, string Msg)
         {
             CreateMsgFrm();
             ActivateTimer();
@@ -128,7 +128,7 @@ namespace PointSystem
         }
 
 
-        public static void Error(string Msg)
+        public  void Error(string Msg)
         {
             CreateMsgFrm();
             ActivateTimer();
@@ -147,7 +147,7 @@ namespace PointSystem
 
 
         #region "  Warning  "
-        public static void Warning(string Msg)
+        public void Warning(string Msg)
         {
             CreateMsgFrm();
             ActivateTimer();
@@ -161,7 +161,7 @@ namespace PointSystem
         }
         // Title +  System.Environment.NewLine + Msg;
 
-        public static void Warning(string Title, string Msg)
+        public void Warning(string Title, string Msg)
         {
             CreateMsgFrm();
             ActivateTimer();
@@ -178,7 +178,7 @@ namespace PointSystem
 
 
         #region "Attention "
-        public static void Attention(string Title, string Msg)
+        public  void Attention(string Title, string Msg)
         {
             CreateMsgFrm();
 
@@ -196,7 +196,7 @@ namespace PointSystem
 
         }
 
-        public static void Attention(string Msg)
+        public  void Attention(string Msg)
         {
             CreateMsgFrm();
 
@@ -220,7 +220,7 @@ namespace PointSystem
         #endregion
 
         #region "  ^^^ About     "
-        public static void About()
+        public  void About()
         {
 
             CreateMsgFrm();

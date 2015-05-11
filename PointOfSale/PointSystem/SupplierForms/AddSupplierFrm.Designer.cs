@@ -57,7 +57,7 @@
             supplierNameLabel.AutoSize = true;
             supplierNameLabel.Location = new System.Drawing.Point(254, 23);
             supplierNameLabel.Name = "supplierNameLabel";
-            supplierNameLabel.Size = new System.Drawing.Size(50, 13);
+            supplierNameLabel.Size = new System.Drawing.Size(63, 13);
             supplierNameLabel.TabIndex = 0;
             supplierNameLabel.Text = "اسم المورد:";
             // 
@@ -67,7 +67,7 @@
             phoneLabel.AutoSize = true;
             phoneLabel.Location = new System.Drawing.Point(257, 50);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(49, 13);
+            phoneLabel.Size = new System.Drawing.Size(59, 13);
             phoneLabel.TabIndex = 2;
             phoneLabel.Text = "رقم الهاتف:";
             // 
@@ -77,7 +77,7 @@
             addressLabel.AutoSize = true;
             addressLabel.Location = new System.Drawing.Point(260, 76);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(36, 13);
+            addressLabel.Size = new System.Drawing.Size(42, 13);
             addressLabel.TabIndex = 4;
             addressLabel.Text = "العنوان:";
             // 
@@ -165,6 +165,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSupplierFrm";
             this.ThemeName = "Office2013Light";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddSupplierFrm_FormClosing);
             this.Load += new System.EventHandler(this.AddSupplierFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

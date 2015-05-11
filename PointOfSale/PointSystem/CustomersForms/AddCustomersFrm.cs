@@ -29,7 +29,7 @@ namespace PointSystem.CustomersForms
         {
             if (txtName.Text == "")
             {
-                _Alert.Warning("أدخل أسم العميـــل للضروره");
+                Alert.Warning("أدخل أسم العميـــل للضروره");
                 return;
 
             }
@@ -39,8 +39,8 @@ namespace PointSystem.CustomersForms
                 if (txtName.Text != "")
                 {
 
-                    Db.CustomersRow c = CustomersCmd.GetByName(txtName.Text);
-                    _Alert.Warning("موجود");
+                    Db.CustomersRow c = GetByName(txtName.Text);
+                    Alert.Warning("موجود");
                     ClearTxt();
                     return;
                 }
@@ -84,24 +84,56 @@ namespace PointSystem.CustomersForms
                     DbManager.SaveChanges();
 
 
-                    _Alert.Information("حـــــفظ", "تـــــم الحــــــفظ بنجـــــاح");
+                    Alert.Information("حـــــفظ", "تـــــم الحــــــفظ بنجـــــاح");
                  
                     ClearTxt();
 
                 }
                 else
                 {
-                    _Alert.Warning("أدخل أسم العميـــل للضروره");
+                    Alert.Warning("أدخل أسم العميـــل للضروره");
 
                     return;
                 }
             }
         }
-
+        _Alert Alert = new _Alert();
         void ClearTxt()
         {
             txtName.Text = ""; txtAddress.Text = ""; txtPhone.Text = ""; txtName.Focus();
         }
+
+
+        #region "                 "
+
+        public List<Db.CustomersRow> GetAllCustomers()
+        {
+            DbManager = new DataManager();
+            List<Db.CustomersRow> GetAll = DbManager.ShopData.Customers.Where(c => c.Status == "Active").ToList();
+
+            return GetAll;
+        }
+
+    
+
+
+   
+
+        public Db.CustomersRow GetByName(string cstname)
+        {
+            DbManager = new DataManager();
+            Db.CustomersRow c = DbManager.ShopData.Customers.Where(b => b.CustomerName == cstname && b.Status == "Active").Single();
+            return c;
+        }
+
+
+        #endregion 
+
+        private void AddCustomersFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Alert.Dispose();
+        }
+
 
     }
 }

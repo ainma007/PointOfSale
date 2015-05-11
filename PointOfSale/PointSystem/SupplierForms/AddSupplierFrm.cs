@@ -32,7 +32,7 @@ namespace PointSystem.SupplierForms
             {
                 if (txtSupplierName.Text == "") { return; }
                 Db.SuppliersRow GetHim = GetSupplierByName(txtSupplierName.Text);
-                _Alert.Attention ("موجود بالفــعل");
+                Alert.Attention ("موجود بالفــعل");
                 return;
             }
             catch (Exception)
@@ -70,7 +70,7 @@ namespace PointSystem.SupplierForms
 
                 DbManager.ShopData.Phones.AddPhonesRow(ph);
                 DbManager.SaveChanges();
-                _Alert.Information("تــم الحــــــفظ بنجــاح");
+                Alert.Information("تــم الحــــــفظ بنجــاح");
              
             }
         }
@@ -101,7 +101,7 @@ namespace PointSystem.SupplierForms
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Helper.TextKeyPressWithoutDot(txtPhone, e);
+            xHelper.TextKeyPressWithoutDot(txtPhone, e);
         }
 
         private void radGroupBox1_Click(object sender, EventArgs e)
@@ -109,7 +109,14 @@ namespace PointSystem.SupplierForms
 
         }
 
+        Helper xHelper = new Helper();
+        _Alert Alert = new _Alert();
 
+        private void AddSupplierFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            xHelper.Dispose();
+            Alert.Dispose();
+        }
 
     
 

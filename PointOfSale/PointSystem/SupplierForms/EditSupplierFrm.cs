@@ -18,6 +18,9 @@ namespace PointSystem.SupplierForms
         {
             InitializeComponent();
         }
+        Helper xHelper = new Helper();
+        _Alert Alert = new _Alert();
+
         public Db.SuppliersRow TargetSupplier { get; set; }
         static DataManager DbManager = new DataManager();
         private void EditSupplierFrm_Load(object sender, EventArgs e)
@@ -36,7 +39,7 @@ namespace PointSystem.SupplierForms
             }
 
 
-            AccountsCmd.ChangeAccountName(TargetSupplier.AccountID, txtSupplierName.Text);
+            ChangeAccountName(TargetSupplier.AccountID, txtSupplierName.Text);
 
             TargetSupplier.SupplierName = txtSupplierName.Text;
             TargetSupplier.Address = txtAddress.Text;
@@ -61,21 +64,21 @@ namespace PointSystem.SupplierForms
             }
           
 
-            AccountsCmd.ChangeAccountName(TargetSupplier.AccountID, txtSupplierName.Text);
+            ChangeAccountName(TargetSupplier.AccountID, txtSupplierName.Text);
 
 
 
-            _Alert.Information("تــم الحــــــفظ بنجــاح");
+            Alert.Information("تــم الحــــــفظ بنجــاح");
       
             this.Hide();
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Helper.TextKeyPress(txtPhone , sender , e) ;
+            xHelper.TextKeyPress(txtPhone , sender , e) ;
         }
 
-        private static bool EditSupplier(Db.SuppliersRow sup)
+        private bool EditSupplier(Db.SuppliersRow sup)
         {
             DbManager = new DataManager();
             Db.SuppliersRow Rw = DbManager.ShopData.Suppliers.NewSuppliersRow();
@@ -88,6 +91,20 @@ namespace PointSystem.SupplierForms
             DbManager.SaveChanges();
             return true;
         }
+        public void ChangeAccountName(int AcctId, string NewName)
+        {
+            DbManager = new DataManager();
 
+            Db.AccountsRow act = DbManager.ShopData.Accounts.Where(a => a.ID == AcctId).Single();
+
+            act.AccountName = NewName;
+            DbManager.SaveChanges();
+        }
+
+        private void EditSupplierFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Alert.Dispose();
+            xHelper.Dispose();
+        }
     }
 }

@@ -118,7 +118,7 @@
             this.WorkPicker.Size = new System.Drawing.Size(91, 21);
             this.WorkPicker.TabIndex = 2;
             this.WorkPicker.TabStop = false;
-            this.WorkPicker.Text = "08/05/2015";
+            this.WorkPicker.Text = "5/8/2015";
             this.WorkPicker.ThemeName = "Office2013Light";
             this.WorkPicker.Value = new System.DateTime(2015, 5, 8, 17, 39, 6, 429);
             // 
@@ -191,6 +191,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEmployeeFrm";
             this.ThemeName = "TelerikMetroBlue";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEmployeeFrm_FormClosing);
             this.Load += new System.EventHandler(this.AddEmployeeFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

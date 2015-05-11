@@ -19,14 +19,14 @@ namespace PointSystem.EmployeeForms
         }
         static DataManager DbManager = new DataManager();
 
-        public static List<Db.EmployeesRow> GetAllEmployees()
+        public  List<Db.EmployeesRow> GetAllEmployees()
         {
             DbManager = new DataManager();
-            List<Db.EmployeesRow> GetAll = (from emp
-                                            in DbManager.ShopData.Employees
-                                            orderby emp.EmployeeName ascending
-                                            where emp.Status == "Active"
-                                            select emp).ToList();
+            List<Db.EmployeesRow> GetAll =
+                                            DbManager.ShopData.Employees.Where(emp => emp.Status == "Active").ToList();
+                                           
+                                          
+                                          
             return GetAll;
         }
 
@@ -69,12 +69,24 @@ namespace PointSystem.EmployeeForms
             ManageEmployeeFrm_Load(sender, e);
         }
 
+
+        public  Db.EmployeesRow GetById(int xid)
+        {
+            DbManager = new DataManager();
+
+            Db.EmployeesRow rw =
+                                 DbManager.ShopData.Employees.Where(emp => emp.ID == xid).Single();
+
+            return rw;
+        }
+  
+
         private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
         {
             int col = this.DgvEmployees.CurrentCell.ColumnIndex;
         
 
-            Db.EmployeesRow rw = EmployeesCmd.GetById(int.Parse(DgvEmployees.CurrentRow.Cells[0].Value.ToString()));
+            Db.EmployeesRow rw =GetById(int.Parse(DgvEmployees.CurrentRow.Cells[0].Value.ToString()));
             if (col.ToString() == "6")
             {
                 EditEmployeeFrm frm = new EditEmployeeFrm();
@@ -93,12 +105,30 @@ namespace PointSystem.EmployeeForms
                    MessageBoxOptions.RtlReading |
                    MessageBoxOptions.RightAlign) == System.Windows.Forms.DialogResult.OK)
                 {
-                    EmployeesCmd.DeleteEmployee(rw);
-                    _Alert.Information("حـــــذف", "تـــــم الحــــذف");
+                    DeleteEmployee(rw);
+                    Alert.Information("حـــــذف", "تـــــم الحــــذف");
                 }
 
                 ManageEmployeeFrm_Load(sender, e);
             }
+        }
+
+        public static Db.EmployeesRow DeleteEmployee(Db.EmployeesRow emptb)
+        {
+
+            DbManager = new DataManager();
+            Db.EmployeesRow emp = DbManager.ShopData.Employees.Where(ep => ep.ID == emptb.ID).Single();
+            DbManager.ShopData.Employees.RemoveEmployeesRow(emp);
+            DbManager.SaveChanges();
+            return emp;
+
+        }
+        
+        _Alert Alert = new _Alert();
+
+        private void ManageEmployeeFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Alert.Dispose();
         }
     }
 }

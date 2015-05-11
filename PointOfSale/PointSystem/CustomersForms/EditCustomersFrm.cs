@@ -21,27 +21,28 @@ namespace PointSystem.CustomersForms
 
 
         static DataManager DbManager = new DataManager();
-
+        _Alert Alert = new _Alert();
+      
         public Db.CustomersRow TargetCustomer { get; set; }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
             if (txtName.Text == "")
             {
-                _Alert.Warning("لايجــوز ترك الاسم فارغ");
+                Alert.Warning("لايجــوز ترك الاسم فارغ");
                 return;
             }
             else
             {
 
 
-                AccountsCmd.ChangeAccountName(TargetCustomer.AccountID, txtName.Text);
+               ChangeAccountName(TargetCustomer.AccountID, txtName.Text);
                 //=====================================================================
                 TargetCustomer.Address = txtAddress.Text;
                 TargetCustomer.CustomerName = txtName.Text;
                 TargetCustomer.Phone = txtPhone.Text;
 
-                CustomersCmd.EditCustomer(TargetCustomer);
+               EditCustomer(TargetCustomer);
 
                 //---------------------------------------------------------------------------------
                 try
@@ -67,5 +68,35 @@ namespace PointSystem.CustomersForms
             txtName.Text = TargetCustomer.CustomerName;
             txtPhone.Text = TargetCustomer.Phone;
         }
+
+
+        public bool EditCustomer(Db.CustomersRow cst)
+        {
+            DbManager = new DataManager();
+            Db.CustomersRow c = DbManager.ShopData.Customers.Where(b => b.ID == cst.ID && b.Status == "Active").Single();
+            c.CustomerName = cst.CustomerName;
+            c.Address = cst.Address;
+            c.Phone = cst.Phone;
+            c.Status = cst.Status;
+            DbManager.SaveChanges();
+            return true;
+        }
+
+        private void EditCustomersFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Alert.Dispose();
+           
+        }
+
+        public void ChangeAccountName(int AcctId, string NewName)
+        {
+            DbManager = new DataManager();
+
+            Db.AccountsRow act = DbManager.ShopData.Accounts.Where(a => a.ID == AcctId).Single();
+
+            act.AccountName = NewName;
+            DbManager.SaveChanges();
+        }
+
     }
 }

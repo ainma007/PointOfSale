@@ -12,7 +12,7 @@ namespace PointSystem.Accounting
 
         static DataManager DbManager = new DataManager();
 
-        public static List<Db.AccountsRow> GetAllAccounts()
+        public  List<Db.AccountsRow> GetAllAccounts()
         {
             DbManager = new DataManager();
             List<Db.AccountsRow> GetAll = DbManager.ShopData.Accounts.ToList();
@@ -20,7 +20,7 @@ namespace PointSystem.Accounting
             return GetAll;
         }
 
-        public static Db.AccountsRow GetAccountsByID(int actid)
+        public  Db.AccountsRow GetAccountsByID(int actid)
         {
             DbManager = new DataManager();
 
@@ -29,7 +29,7 @@ namespace PointSystem.Accounting
             return GetOne;
         }
 
-        public static void ChangeAccountName(int AcctId, string NewName)
+        public  void ChangeAccountName(int AcctId, string NewName)
         {
             DbManager = new DataManager();
 
@@ -39,14 +39,14 @@ namespace PointSystem.Accounting
             DbManager.SaveChanges();
         }
 
-        public static List<Db.AccountDailyRow> GetAllDaily()
+        public  List<Db.AccountDailyRow> GetAllDaily()
         {
             DbManager = new DataManager();
             List<Db.AccountDailyRow> q = DbManager.ShopData.AccountDaily.ToList();
                                          
             return q;
         }
-        public static List<Db.AccountDailyRow> GetAllDailyByDate(DateTime dat)
+        public  List<Db.AccountDailyRow> GetAllDailyByDate(DateTime dat)
         {
             DbManager = new DataManager();
             List<Db.AccountDailyRow> q = DbManager.ShopData.AccountDaily.Where (c=> c.TheDate == dat).ToList ();
@@ -54,7 +54,7 @@ namespace PointSystem.Accounting
             return q;
         }
 
-        public static List<Db.AccountDailyRow> GetAllDailyByID_Date(int XID, DateTime dat)
+        public List<Db.AccountDailyRow> GetAllDailyByID_Date(int XID, DateTime dat)
         {
 
             DbManager = new DataManager();
@@ -63,7 +63,7 @@ namespace PointSystem.Accounting
             return q;
         }
 
-        public static List<Db.AccountDailyRow> GetAllDailyByAccountName(string AcctName)
+        public  List<Db.AccountDailyRow> GetAllDailyByAccountName(string AcctName)
         {
 
             DbManager = new DataManager();
@@ -77,7 +77,7 @@ namespace PointSystem.Accounting
 
 
 
-        public static bool NewAccount(Db.AccountsRow rw)
+        public  bool NewAccount(Db.AccountsRow rw)
         {
             DbManager = new DataManager();
             Db.AccountsRow CustomerAct = DbManager.ShopData.Accounts.NewAccountsRow();
@@ -90,7 +90,7 @@ namespace PointSystem.Accounting
 
         }
 
-        public static double Balance(int AcctId)
+        public  double Balance(int AcctId)
         {
 
             DbManager = new DataManager();

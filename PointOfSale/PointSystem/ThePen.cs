@@ -10,7 +10,7 @@ namespace PointSystem
     {
 
         static DataManager DbManager = new DataManager();
-        public static void Writer(string action, int Debit, int Cridet, double amunt, string descrip)
+        public void Writer(string action, int Debit, int Cridet, double amunt, string descrip)
         {
 
             #region "  ^^^^  AccountDaily   الدفتـــر الاســـــتاذ "
@@ -71,8 +71,6 @@ namespace PointSystem
             GC.SuppressFinalize(this);
 
         }
-
-
 
     }
 }

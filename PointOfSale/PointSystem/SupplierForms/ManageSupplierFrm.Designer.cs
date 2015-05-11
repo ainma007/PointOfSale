@@ -209,6 +209,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageSupplierFrm";
             this.ThemeName = "TelerikMetroBlue";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageSupplierFrm_FormClosing);
             this.Load += new System.EventHandler(this.ManageSupplierFrm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

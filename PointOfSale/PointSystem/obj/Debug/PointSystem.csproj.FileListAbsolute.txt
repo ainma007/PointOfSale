@@ -17,7 +17,6 @@ C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\RdlCompile.compiled
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.exe
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.pdb
-C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.csprojResolveAssemblyReference.cache
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.SupplierForms.AddSupplierFrm.resources
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.SupplierForms.EditSupplierFrm.resources
 C:\Users\AbuEhab\Documents\GitHub\PointOfSale\PointOfSale\PointSystem\obj\Debug\PointSystem.SupplierForms.ManageSupplierFrm.resources

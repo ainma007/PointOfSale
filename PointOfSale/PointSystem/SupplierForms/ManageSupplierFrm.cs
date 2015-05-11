@@ -85,7 +85,7 @@ namespace PointSystem.SupplierForms
 
                     DbManager.ShopData.Suppliers.RemoveSuppliersRow(Delrw);
                     DbManager.SaveChanges();
-                    _Alert.Information("حـــــذف", "تـــــم الحــــذف");
+                    Alert.Information("حـــــذف", "تـــــم الحــــذف");
                     ManageSupplierFrm_Load(sender, e);
                 }
             }
@@ -97,6 +97,14 @@ namespace PointSystem.SupplierForms
             Db.SuppliersRow GetHim = DbManager.ShopData.Suppliers.Where(s => s.ID == xid).Single();
 
             return GetHim;
+        }
+
+        _Alert Alert = new _Alert();
+
+        private void ManageSupplierFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Alert.Dispose();
+            
         }
     }
 }

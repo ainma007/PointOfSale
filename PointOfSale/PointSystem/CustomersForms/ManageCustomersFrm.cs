@@ -65,7 +65,7 @@ namespace PointSystem.CustomersForms
             int col = this.DgvCustomers.CurrentCell.ColumnIndex;
             // int row = this.DgvUsers.CurrentCell.RowIndex;
 
-            Db.CustomersRow rw = CustomersCmd.GetById(int.Parse(DgvCustomers.CurrentRow.Cells[0].Value.ToString()));
+            Db.CustomersRow rw = GetById(int.Parse(DgvCustomers.CurrentRow.Cells[0].Value.ToString()));
 
             if (col.ToString() == "4")
             {
@@ -92,7 +92,7 @@ namespace PointSystem.CustomersForms
                     //   c.Status = "DisActive";
                     DbManager.ShopData.Customers.RemoveCustomersRow(c);
                     DbManager.SaveChanges();
-                    _Alert.Information("حـــــذف", "تـــــم الحــــذف");
+                    Alert.Information("حـــــذف", "تـــــم الحــــذف");
                    
                     PopulateDgv();
                 }
@@ -105,8 +105,25 @@ namespace PointSystem.CustomersForms
 
             List<Db.CustomersRow> GetAll = DbManager.ShopData.Customers.Where (c=> c.Status == "Active").ToList ();
 
-            Helper.DisplayReport("RepCustomers", GetAll);
+            xHelper.DisplayReport("RepCustomers", GetAll);
 
         }
+
+        public Db.CustomersRow GetById(int cstid)
+        {
+            DbManager = new DataManager();
+            Db.CustomersRow c = DbManager.ShopData.Customers.Where(b => b.ID == cstid && b.Status == "Active").Single();
+            return c;
+        }
+
+        Helper xHelper = new Helper();
+        _Alert Alert = new _Alert();
+
+        private void ManageCustomersFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            xHelper.Dispose();
+            Alert.Dispose();
+        }
+
     }
 }

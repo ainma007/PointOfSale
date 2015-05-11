@@ -19,7 +19,7 @@ namespace PointSystem
         public MainForm()
         {
             InitializeComponent();
-            Helper.SetKeyboardLanguage("ar-SA"); 
+            xHelper.SetKeyboardLanguage("ar-SA"); 
 
             #region "      Load Home Informations          "
             try
@@ -35,6 +35,8 @@ namespace PointSystem
 
             #endregion 
         }
+
+        Helper xHelper = new Helper();
         #region "      Create Main Categories For Accounts            "
         static DataManager DbManager = new DataManager();
         void CreateAccountCategories()

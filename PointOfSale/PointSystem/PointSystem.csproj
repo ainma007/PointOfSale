@@ -62,7 +62,6 @@
     <Compile Include="CustomersForms\AddCustomersFrm.Designer.cs">
       <DependentUpon>AddCustomersFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomersForms\CustomersCmd.cs" />
     <Compile Include="CustomersForms\EditCustomersFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +92,6 @@
     <Compile Include="EmployeeForms\EditEmployeeFrm.Designer.cs">
       <DependentUpon>EditEmployeeFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeForms\EmployeesCmd.cs" />
     <Compile Include="EmployeeForms\ManageEmployeeFrm.cs">
       <SubType>Form</SubType>
     </Compile>

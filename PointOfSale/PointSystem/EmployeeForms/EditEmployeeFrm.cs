@@ -18,6 +18,11 @@ namespace PointSystem.EmployeeForms
             InitializeComponent();
         }
         static DataManager DbManager = new DataManager();
+
+        Helper xHelper = new Helper();
+        _Alert Alert = new _Alert();
+
+
         public Db.EmployeesRow TargetEmployee { get; set; }
         private void EditEmployeeFrm_Load(object sender, EventArgs e)
         {
@@ -27,12 +32,12 @@ namespace PointSystem.EmployeeForms
                     txtSalary.Text = TargetEmployee.Salary.ToString();
                     WorkPicker.Text = TargetEmployee.StartWorkAt.ToString();
         }
-
+       
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             if (txtName.Text == "" || txtSalary.Text == "")
             {
-                _Alert.Attention("تنبـــــيه", "أدخـــــل الاســــم والراتب للضرورة");
+                Alert.Attention("تنبـــــيه", "أدخـــــل الاســــم والراتب للضرورة");
                 return;
             }
             //===================================================================================
@@ -70,12 +75,18 @@ namespace PointSystem.EmployeeForms
 
         private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Helper.TextKeyPress(txtSalary, sender, e);
+            xHelper.TextKeyPress(txtSalary, sender, e);
         }
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Helper.TextKeyPressWithoutDot(txtPhone, e);
+            xHelper.TextKeyPressWithoutDot(txtPhone, e);
+        }
+
+        private void EditEmployeeFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            xHelper.Dispose();
+            Alert.Dispose();
         }
     }
 }
