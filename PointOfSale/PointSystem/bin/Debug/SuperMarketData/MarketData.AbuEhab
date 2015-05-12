@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes"?>
+<Db xmlns="http://tempuri.org/Db.xsd">
+  <Phones>
+    <ID>1</ID>
+    <PName>محسن سعيد</PName>
+    <Phone>654654</Phone>
+    <PersonID>8</PersonID>
+  </Phones>
+  <AccountCategories>
+    <ID>1</ID>
+    <CategoryName>النقدية</CategoryName>
+    <Description>النقدية</Description>
+  </AccountCategories>
+  <AccountCategories>
+    <ID>2</ID>
+    <CategoryName>الأصول</CategoryName>
+    <Description>الأصول</Description>
+  </AccountCategories>
+  <AccountCategories>
+    <ID>3</ID>
+    <CategoryName>الموردين</CategoryName>
+    <Description>الموردين</Description>
+  </AccountCategories>
+  <AccountCategories>
+    <ID>4</ID>
+    <CategoryName>العملاء</CategoryName>
+    <Description>العملاء</Description>
+  </AccountCategories>
+  <AccountCategories>
+    <ID>5</ID>
+    <CategoryName>الدائنين</CategoryName>
+    <Description>الدائنين</Description>
+  </AccountCategories>
+  <Accounts>
+    <ID>1</ID>
+    <AccountName>رأس المال</AccountName>
+    <Description>حساب رأس المال</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>2</ID>
+    <AccountName>الصندوق</AccountName>
+    <Description>حساب الصندوق</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>3</ID>
+    <AccountName>البنك</AccountName>
+    <Description>حساب البنك</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>4</ID>
+    <AccountName>المشتريات</AccountName>
+    <Description>حساب المشتريات</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>5</ID>
+    <AccountName>المبيعات</AccountName>
+    <Description>حساب المبيعات</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>6</ID>
+    <AccountName>المصروفات</AccountName>
+    <Description>حساب المصروفات</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>7</ID>
+    <AccountName>أوراق الدفع</AccountName>
+    <Description>أوراق الدفع</Description>
+    <AccountCategoryID>1</AccountCategoryID>
+  </Accounts>
+  <Accounts>
+    <ID>8</ID>
+    <AccountName>محسن سعيد</AccountName>
+    <Description>Supplier</Description>
+    <AccountCategoryID>3</AccountCategoryID>
+  </Accounts>
+  <Suppliers>
+    <ID>1</ID>
+    <SupplierName>محسن سعيد</SupplierName>
+    <Address>65464</Address>
+    <Phone>654654</Phone>
+    <AccountID>8</AccountID>
+    <Status>Active</Status>
+  </Suppliers>
+</Db>

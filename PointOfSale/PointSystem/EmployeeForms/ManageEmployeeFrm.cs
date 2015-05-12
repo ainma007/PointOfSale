@@ -130,5 +130,10 @@ namespace PointSystem.EmployeeForms
         {
             Alert.Dispose();
         }
+
+        private void DgvEmployees_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

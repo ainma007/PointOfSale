@@ -74,7 +74,7 @@
             this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(54, 22);
+            this.AddBtn.Size = new System.Drawing.Size(57, 22);
             this.AddBtn.Text = "اضافة";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
@@ -89,7 +89,7 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(55, 22);
+            this.RefreshBtn.Size = new System.Drawing.Size(59, 22);
             this.RefreshBtn.Text = "تحديث";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
@@ -104,7 +104,7 @@
             this.PrintBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.PrintBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.PrintBtn.Name = "PrintBtn";
-            this.PrintBtn.Size = new System.Drawing.Size(55, 22);
+            this.PrintBtn.Size = new System.Drawing.Size(57, 22);
             this.PrintBtn.Text = "طباعة";
             // 
             // statusStrip1
@@ -188,6 +188,7 @@
             this.DgvEmployees.TabIndex = 0;
             this.DgvEmployees.ThemeName = "TelerikMetroBlue";
             this.DgvEmployees.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
+            this.DgvEmployees.Click += new System.EventHandler(this.DgvEmployees_Click);
             // 
             // ManageEmployeeFrm
             // 

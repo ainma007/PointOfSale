@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label supplierNameLabel;
             System.Windows.Forms.Label phoneLabel;
             System.Windows.Forms.Label addressLabel;
@@ -36,18 +35,15 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.db = new PointSystem.Db();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
+            this.telerikMetroBlueTheme2 = new Telerik.WinControls.Themes.TelerikMetroBlueTheme();
             supplierNameLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,44 +92,32 @@
             this.radGroupBox1.HeaderText = "";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(325, 182);
+            this.radGroupBox1.Size = new System.Drawing.Size(325, 164);
             this.radGroupBox1.TabIndex = 0;
             this.radGroupBox1.ThemeName = "TelerikMetroBlue";
             this.radGroupBox1.Click += new System.EventHandler(this.radGroupBox1_Click);
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(144, 127);
+            this.AddBtn.Location = new System.Drawing.Point(204, 117);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(110, 34);
             this.AddBtn.TabIndex = 5;
             this.AddBtn.Text = "اضافة";
-            this.AddBtn.ThemeName = "Office2013Light";
+            this.AddBtn.ThemeName = "TelerikMetroBlue";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // txtAddress
             // 
             this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "Address", true));
             this.txtAddress.Location = new System.Drawing.Point(27, 73);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(227, 20);
             this.txtAddress.TabIndex = 3;
             // 
-            // suppliersBindingSource
-            // 
-            this.suppliersBindingSource.DataMember = "Suppliers";
-            this.suppliersBindingSource.DataSource = this.db;
-            // 
-            // db
-            // 
-            this.db.DataSetName = "Db";
-            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtPhone
             // 
             this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "Phone", true));
             this.txtPhone.Location = new System.Drawing.Point(121, 47);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(133, 20);
@@ -143,7 +127,6 @@
             // txtSupplierName
             // 
             this.txtSupplierName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSupplierName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierName", true));
             this.txtSupplierName.Location = new System.Drawing.Point(27, 21);
             this.txtSupplierName.Name = "txtSupplierName";
             this.txtSupplierName.Size = new System.Drawing.Size(227, 20);
@@ -154,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(325, 182);
+            this.ClientSize = new System.Drawing.Size(325, 164);
             this.Controls.Add(this.radGroupBox1);
             this.Name = "AddSupplierFrm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -164,15 +147,13 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSupplierFrm";
-            this.ThemeName = "Office2013Light";
+            this.ThemeName = "TelerikMetroBlue";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddSupplierFrm_FormClosing);
             this.Load += new System.EventHandler(this.AddSupplierFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -182,11 +163,10 @@
 
         private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        private System.Windows.Forms.BindingSource suppliersBindingSource;
-        private Db db;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtSupplierName;
         private Telerik.WinControls.UI.RadButton AddBtn;
+        private Telerik.WinControls.Themes.TelerikMetroBlueTheme telerikMetroBlueTheme2;
     }
 }
