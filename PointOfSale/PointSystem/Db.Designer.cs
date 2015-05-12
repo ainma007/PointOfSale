@@ -3483,6 +3483,10 @@ namespace PointSystem {
             
             private global::System.Data.DataColumn columnTotalCost;
             
+            private global::System.Data.DataColumn columnElemenType;
+            
+            private global::System.Data.DataColumn columnExpireDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public StoresDataTable() {
@@ -3566,6 +3570,22 @@ namespace PointSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ElemenTypeColumn {
+                get {
+                    return this.columnElemenType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ExpireDateColumn {
+                get {
+                    return this.columnExpireDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3601,7 +3621,7 @@ namespace PointSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public StoresRow AddStoresRow(string Product, double SalePrice, int AvailableQty, string BarCode, double TotalCost) {
+            public StoresRow AddStoresRow(string Product, double SalePrice, int AvailableQty, string BarCode, double TotalCost, string ElemenType, System.DateTime ExpireDate) {
                 StoresRow rowStoresRow = ((StoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3609,7 +3629,9 @@ namespace PointSystem {
                         SalePrice,
                         AvailableQty,
                         BarCode,
-                        TotalCost};
+                        TotalCost,
+                        ElemenType,
+                        ExpireDate};
                 rowStoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStoresRow);
                 return rowStoresRow;
@@ -3645,6 +3667,8 @@ namespace PointSystem {
                 this.columnAvailableQty = base.Columns["AvailableQty"];
                 this.columnBarCode = base.Columns["BarCode"];
                 this.columnTotalCost = base.Columns["TotalCost"];
+                this.columnElemenType = base.Columns["ElemenType"];
+                this.columnExpireDate = base.Columns["ExpireDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3662,6 +3686,10 @@ namespace PointSystem {
                 base.Columns.Add(this.columnBarCode);
                 this.columnTotalCost = new global::System.Data.DataColumn("TotalCost", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCost);
+                this.columnElemenType = new global::System.Data.DataColumn("ElemenType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnElemenType);
+                this.columnExpireDate = new global::System.Data.DataColumn("ExpireDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpireDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("StoresKey1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -8736,6 +8764,38 @@ namespace PointSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ElemenType {
+                get {
+                    try {
+                        return ((string)(this[this.tableStores.ElemenTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ElemenType\' in table \'Stores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStores.ElemenTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ExpireDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableStores.ExpireDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExpireDate\' in table \'Stores\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStores.ExpireDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsProductNull() {
                 return this.IsNull(this.tableStores.ProductColumn);
             }
@@ -8792,6 +8852,30 @@ namespace PointSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalCostNull() {
                 this[this.tableStores.TotalCostColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsElemenTypeNull() {
+                return this.IsNull(this.tableStores.ElemenTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetElemenTypeNull() {
+                this[this.tableStores.ElemenTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExpireDateNull() {
+                return this.IsNull(this.tableStores.ExpireDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExpireDateNull() {
+                this[this.tableStores.ExpireDateColumn] = global::System.Convert.DBNull;
             }
         }
         
